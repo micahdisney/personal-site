@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -39,14 +40,29 @@ public class PostsController {
     }
 
     @GetMapping("/posts/create")
-    @ResponseBody
-    public String showPostForm() {
-        return "view creating post form";
+    public String showPostForm(Model model) {
+        model.addAttribute("post", new Post());
+        return "posts/create";
     }
 
     @PostMapping("/posts/create")
-    @ResponseBody
-    public String savePost() {
-        return "create new post";
+    public String savePost(
+            @RequestParam(name = "title") String title,
+            @RequestParam(name = "body") String body,
+            Model model
+    ) {
+        Post post = new Post(title, body);
+        postSvc.save(post);
+        model.addAttribute("post", post);
+        return "posts/create";
     }
+
+
+    @GetMapping("/posts/{id}/edit")
+    public String showEditForm(@PathVariable long id, Model model) {
+        Post post = postSvc.findOne(id);
+        model.addAttribute("post", post);
+        return "posts/edit";
+    }
+
 }
