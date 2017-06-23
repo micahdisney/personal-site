@@ -27,7 +27,7 @@ public class PostsController {
 
     @GetMapping("/posts")
     public String viewAll(Model model) {
-        List<Post> posts = postSvc.findAll();
+        Iterable<Post> posts = postSvc.findAll();
         model.addAttribute("posts", posts);
         return "posts/index";
     }
@@ -63,6 +63,19 @@ public class PostsController {
         Post post = postSvc.findOne(id);
         model.addAttribute("post", post);
         return "posts/edit";
+    }
+
+    @PostMapping("/posts/{id}/edit")
+    public String editPost(@ModelAttribute Post post){
+        postSvc.save(post);
+        return "redirect:/posts/" + post.getId();
+    }
+
+    @PostMapping("/post/delete")
+    public String deletePost(@ModelAttribute Post post, Model model){
+        postSvc.deletePost(post.getId());
+        model.addAttribute("msg", "Your post was deleted correctly");
+        return "return the view with a success message";
     }
 
 }
