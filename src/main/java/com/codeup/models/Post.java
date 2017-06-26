@@ -14,9 +14,14 @@ public class Post {
     @Column(nullable = false, columnDefinition = "text")
     private String body;
 
-    public Post(String title, String body) {
+
+    @OneToOne
+    private User owner;
+
+    public Post(String title, String body, User owner) {
         this.title = title;
         this.body = body;
+        this.owner = owner;
     }
 
     public Post() {
@@ -45,6 +50,14 @@ public class Post {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 }
 
