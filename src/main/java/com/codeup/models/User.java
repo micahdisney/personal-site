@@ -1,7 +1,8 @@
 package com.codeup.models;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
@@ -18,6 +19,7 @@ public class User {
     private String email;
 
     @Column(nullable = false)
+    @JsonIgnore
     private String password;
 
     public User(){

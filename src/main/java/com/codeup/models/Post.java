@@ -1,19 +1,20 @@
 package com.codeup.models;
+
 import javax.persistence.*;
+
 
 @Entity
 @Table(name = "posts")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column(nullable = false)
     private String title;
 
     @Column(nullable = false, columnDefinition = "text")
     private String body;
-
 
     @OneToOne
     private User owner;
@@ -60,7 +61,6 @@ public class Post {
         this.owner = owner;
     }
 }
-
 
 
 

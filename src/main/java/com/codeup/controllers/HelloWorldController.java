@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class HelloWorldController {
 
+
     @GetMapping("/resume")
     public String showResume() {
         return "resume";
@@ -16,21 +17,9 @@ public class HelloWorldController {
         return "portfolio";
     }
 
-    @GetMapping("/hello")
+    @GetMapping("/")
     public String hello() {
-        return "hello";
-    }
-
-
-    @GetMapping("/hello/{name}/{lastName}")
-    @ResponseBody
-    public String helloFriend(@PathVariable String name, @PathVariable String lastName) {
-        return String.format("Hello %s %s!", name, lastName);
-    }
-
-    @RequestMapping(path = "/increment/{number}", method = RequestMethod.GET)
-    @ResponseBody
-    public String addOne(@PathVariable int number) {
-        return number + " plus one is " + (number + 1) + "!";
+        return "index";
     }
 }
+
