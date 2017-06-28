@@ -24,7 +24,6 @@
                 <li><a href="/posts">View the Posts</a></li>
                 <li sec:authorize="isAuthenticated()"><a href="/posts/create">Create post</a></li>
                 <li sec:authorize="isAuthenticated()">
-
                     <form th:action="@{/logout}" th:method="post">
                         <button class="btn-link btn" style="margin-top: 8px">Logout</button>
                     </form>
@@ -50,7 +49,7 @@
     <button class="btn btn-default">Save</button>
 </form>
 
-<form th:fragment="adForm">
+<form th:fragment="createForm">
     <div class="form-group">
         <label for="title">Title</label>
         <input id="title" class="form-control" th:field="*{title}"/>
@@ -61,11 +60,16 @@
     </div>
     <div class="form-group">
         <label for="description">Description</label>
-        <input id="description" class="form-control" th:field="*{description}"/>
-        <div class="alert alert-warning alert-dismissible" role="alert" th:if="${#fields.hasErrors('description')}">
+        <input id="description" class="form-control" th:field="*{body}"/>
+        <div class="alert alert-warning alert-dismissible" role="alert" th:if="${#fields.hasErrors('body')}">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <span th:errors="*{description}" />
         </div>
+    </div>
+
+    <div class="form-group">
+        <label for="file">Image</label>
+        <input type="file" class="form-control" name="file" id="file" />
     </div>
     <button class="btn btn-default">Save</button>
 </form>
