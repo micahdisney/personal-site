@@ -5,15 +5,10 @@ import com.codeup.models.User;
 import com.codeup.repositories.UsersRepository;
 import com.codeup.svcs.PostSvc;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 
 @Controller
@@ -28,7 +23,6 @@ public class PostsController {
         this.usersDao = usersDao;
     }
 
-
     @GetMapping("/posts")
     public String viewAll(Model model) {
         Iterable<Post> posts = postSvc.findAll();
@@ -37,7 +31,7 @@ public class PostsController {
     }
 
     @GetMapping("/posts/{id}")
-    public String viewIndividualPost(@PathVariable Long id, Model model) {
+    public String viewIndividualPost(@PathVariable long id, Model model) {
         Post post = postSvc.findOne(id);
         model.addAttribute("post", post);
         return "posts/show";
@@ -55,14 +49,12 @@ public class PostsController {
             @RequestParam(name = "body") String body,
             Model model
     ) {
-
-        User user = usersDao.findOne(1L);
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Post post = new Post(title, body, user);
         postSvc.save(post);
         model.addAttribute("post", post);
-        return "posts/create";
+        return "redirect:/posts/index";
     }
-
 
     @GetMapping("/posts/{id}/edit")
     public String showEditForm(@PathVariable long id, Model model) {
@@ -72,16 +64,20 @@ public class PostsController {
     }
 
     @PostMapping("/posts/{id}/edit")
-    public String editPost(@ModelAttribute Post post){
+    public String editPost(@ModelAttribute Post post) {
         postSvc.save(post);
         return "redirect:/posts/" + post.getId();
     }
 
     @PostMapping("/post/delete")
-    public String deletePost(@ModelAttribute Post post, Model model){
+    public String deletePost(@ModelAttribute Post post, Model model) {
         postSvc.deletePost(post.getId());
         model.addAttribute("msg", "Your post was deleted correctly");
         return "return the view with a success message";
     }
 
+    @GetMapping("/posts/ajax")
+    public String viewAllAdsUsingAnAjaxCall() {
+        return "posts/ajax";
+    }
 }

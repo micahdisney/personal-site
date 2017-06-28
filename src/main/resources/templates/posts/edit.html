@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-</head>
+<head th:include="fragments :: head('Create a new Post')" />
 <body>
-
+<nav th:replace="fragments :: my-navbar"/>
 <div class="container">
     <form
             th:action="${'/posts/' + post.id + '/edit'}"
