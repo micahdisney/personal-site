@@ -1,7 +1,28 @@
 h1 {
-    color: red;
+    color: midnightblue;
 }
 
 body {
-    background-color: black;
+    background-color: aliceblue;
+}
+
+.navbar-default {
+    border: none;
+    background-color: slategray;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: white;
+}
+
+.navbar-default .navbar-brand{
+    color: white;
+}
+
+.navbar-default .navbar-brand:hover{
+    color: white;
 }
