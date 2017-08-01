@@ -1,39 +1,26 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head th:replace="fragments :: head('Blog index')" />
+<head th:replace="fragments :: head('Blog index')"/>
 <body>
 
-<nav th:replace="fragments :: my-navbar" />
+<!--<nav th:replace="fragments :: my-navbar"/>-->
 
-<div class="container">
+<body class="container indigo">
 
-    <h1>Hello Everyone</h1>
-
-    <div sec:authorize="isAuthenticated()">
-        This content is only shown to authenticated users.
-        <br/>
-        Logged user: <span sec:authentication="name">Bob</span>
-        <br/>
-        Roles: <span sec:authentication="principal.authorities">[ROLES]</span>
+    <div class="row header-row">
+        <div class="col s12">
+            <h1 class="center-align white-text">Hello, My name is Micah.</h1>
+            <h4 class="center-align white-text">a software developer</h4>
+        </div>
+        <div class="center-align">
+            <a class="waves-effect waves-light btn-large main-buttons">Portfolio</a>
+            <a class="waves-effect waves-light btn-large main-buttons">Resume</a>
+            <!--<a class="col s4 waves-effect waves-light btn-large main-buttons">Contact</a>-->
+        </div>
     </div>
 
-    <div sec:authorize="hasRole('ADMIN')">
-        <button class="btn btn-danger">Delete everything</button>
-        <br/>
-    </div>
-
-    <div sec:authorize="hasRole('USER')">
-        <button class="btn">Special User btn</button>
-        <br/>
-    </div>
-
-    <div sec:authorize="hasRole('MGMT')">
-        <button class="btn btn-warning">Manage everything</button>
-        <br/>
-    </div>
-
-</div>
+</body>
 
 <div th:replace="fragments :: scripts"></div>
 
