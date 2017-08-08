@@ -1,83 +1,103 @@
-<!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-    <title></title>
-</head>
-<body>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="fragments :: head('Blog index')"/>
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-center">
-                <li><a href="index.html">Welcome</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-            </ul>
-        </div>
+<body class="red">
+<!--<div class="navbar-fixed">-->
+<nav class="z-depth-0 red darken-2">
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Home</a>
+        <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="/aboutme">About Me</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/resume">Resume</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+
+        <!--<ul class="side-nav" id="mobile">-->
+        <!--<li><a href="">About Me</a></li>-->
+        <!--<li><a href="">Portfolio</a></li>-->
+        <!--<li><a href="">Resume</a></li>-->
+        <!--<li><a href="">Contact</a></li>-->
+        <!--</ul>-->
     </div>
 </nav>
-
-<!--<div class="main-photo">-->
-    <!--<img src="http://placehold.it/350x100" class="img-responsive" style="width:100%" alt="Image">-->
 <!--</div>-->
 
-<div class="container text-center">
-    <div class="row-fluid">
-        <div class="container">
-            <div class="row flex">
-                <div class="col-sm-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Pet Adoption Application</div>
-                        <div class="panel-body">
-                            Collaborative Java and Spring based web application that provides users ability to
-                            search for and adopt pets, as well as allow business owners to man- age site without
-                            need for developer.
-                        </div>
-                    </div>
-                </div><!--/col-->
-                <div class="col-sm-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Simple Simon Game</div>
-                        <div class="panel-body">
-                            Memory game built using JavaScript, jQuery, HTML and CSS. This game consists of four
-                            squares that ran- domly blink and continue
-                            to add one sequence at the end of each round.
-                        </div>
-                    </div>
-                </div><!--/col-->
-                <div class="col-sm-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Custom Wordpress Site</div>
-                        <div class="panel-body">
-                            Built and styled WordPress site for local nonprofit, nv.church, and provided
-                            administrative training for organization owner.
-                        </div>
-                    </div>
-                </div><!--/col-->
-            </div>
+<ul class="side-nav" id="mobile">
+    <li><a href="/aboutme">About Me</a></li>
+    <li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/resume">Resume</a></li>
+    <li><a href="/contact">Contact</a></li>
+</ul>
+
+<div class="container red">
+
+
+
+    <div class="portfolio-item">
+        <h2 class="center-align white-text">Portfolio</h2>
+    </div>
+
+
+    <div class="row portfolio-item">
+        <h4 class="center-align white-text">Pet Adoption Application</h4>
+        <p class="center-align white-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus doloribus
+            ducimus enim error illo, ipsum
+            necessitatibus neque, obcaecati perspiciatis, repudiandae sequi sit tenetur ullam. Ad delectus deserunt
+            dolores
+            enim esse impedit labore nesciunt odio, odit perferendis porro suscipit, ut voluptates.</p>
+        <div class="col s12">
+            <a href="http://www.furbabyfinder.site"><img class="responsive-img" th:src="@{/img/furbaby.png}"/></a>
+        </div>
+    </div>
+
+    <div class="row portfolio-item">
+        <h4 class="center-align white-text">Simple Simon Game</h4>
+        <p class="center-align white-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus doloribus
+            ducimus enim error illo, ipsum
+            necessitatibus neque, obcaecati perspiciatis, repudiandae sequi sit tenetur ullam. Ad delectus deserunt
+            dolores
+            enim esse impedit labore nesciunt odio, odit perferendis porro suscipit, ut voluptates.</p>
+        <div class="col s12">
+            <a href="https://micahdisney.github.io/simple-simon/"><img class="responsive-img"
+                                                                       th:src="@{/img/simplesimon.png}"/></a>
+        </div>
+    </div>
+
+    <div class="row portfolio-item">
+        <h4 class="center-align white-text">Custom Wordpress Site</h4>
+        <p class="center-align white-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus doloribus
+            ducimus enim error illo, ipsum
+            necessitatibus neque, obcaecati perspiciatis, repudiandae sequi sit tenetur ullam. Ad delectus deserunt
+            dolores
+            enim esse impedit labore nesciunt odio, odit perferendis porro suscipit, ut voluptates.</p>
+        <div class="col s12">
+            <a href="http://www.nv.church"><img class="responsive-img" th:src="@{/img/newvision.png}"/></a>
+        </div>
+    </div>
+
+    <div class="row portfolio-item">
+        <h4 class="center-align white-text">Weather Application</h4>
+        <p class="center-align white-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus doloribus
+            ducimus enim error illo, ipsum
+            necessitatibus neque, obcaecati perspiciatis, repudiandae sequi sit tenetur ullam. Ad delectus deserunt
+            dolores
+            enim esse impedit labore nesciunt odio, odit perferendis porro suscipit, ut voluptates.</p>
+        <div class="col s12">
+            <a href="https://micahdisney.github.io/weather-application/"><img class="responsive-img"
+                                                                              th:src="@{/img/weathermap.png}"/></a>
         </div>
     </div>
 </div>
 
-    <script
-            src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+
+<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+<script src="/js/index.js"></script>
 
 </body>
 </html>

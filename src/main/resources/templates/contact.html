@@ -3,9 +3,9 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="fragments :: head('Blog index')"/>
 
-<body class="blue">
+<body class="green">
 <!--<div class="navbar-fixed">-->
-<nav class="z-depth-0 blue darken-2">
+<nav class="z-depth-0 green darken-2">
     <div class="nav-wrapper">
         <a href="/" class="brand-logo">Home</a>
         <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -33,8 +33,38 @@
     <li><a href="/contact">Contact</a></li>
 </ul>
 
-<div class="container blue">
+<div class="container green">
 
+
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="first_name" type="text"/>
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="last_name" type="text"/>
+                    <label for="last_name">Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email"/>
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Message</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <!--<i class="material-icons right">send</i>-->
+            </button>
+        </form>
+    </div>
 </div>
 
 <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="

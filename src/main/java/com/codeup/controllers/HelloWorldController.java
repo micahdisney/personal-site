@@ -17,6 +17,16 @@ public class HelloWorldController {
         return "portfolio";
     }
 
+    @GetMapping("/contact")
+    public String showContact() {
+        return "contact";
+    }
+
+    @GetMapping("/aboutme")
+    public String showAboutMe() {
+        return "aboutme";
+    }
+
     @GetMapping("/")
     public String hello() {
         return "index";
