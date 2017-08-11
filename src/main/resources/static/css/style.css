@@ -7,9 +7,27 @@
     margin-bottom: 170px;
 }
 
-
 .z-depth-0 {
     -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
     -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0);
+}
+
+.brand-logo {
+    margin-left: 5px;
+}
+
+nav .nav-wrapper {
+    position: relative;
+    height: 100%;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+i.medium {
+    margin: 24px;
+}
+
+.about-me-button {
+    margin-top: 50px;
 }
