@@ -4,7 +4,8 @@
 }
 
 .portfolio-item {
-    margin-bottom: 170px;
+    margin-top: 75px;
+    margin-bottom: 75px;
 }
 
 .z-depth-0 {
@@ -32,4 +33,8 @@ i.medium {
 
 .homepage-tagline {
     margin-bottom: 60px;
+}
+
+a {
+    color: white;
 }
