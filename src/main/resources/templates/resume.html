@@ -36,9 +36,14 @@
 <div class="container indigo">
 
 
-    <div class="col s12">
-        <embed th:src="@{/img/disney_resume.pdf}" width="100%" height="1150px"/>
-    </div>
+    <!--<div class="col s12">-->
+        <!--<embed th:src="@{/img/disney_resume.pdf}" width="100%" height="1150px"/>-->
+    <!--</div>-->
+
+    <object th:data="@{/img/disney_resume.pdf}" type="application/pdf" width="100%" height="1150px">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a th:href="@{/img/disney_resume.pdf}">Download PDF</a>.</p>
+    </object>
+
 
 </div>
 
