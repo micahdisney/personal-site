@@ -31,10 +31,25 @@ i.medium {
     margin-top: 60px;
 }
 
+i.small {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
 .homepage-tagline {
     margin-bottom: 60px;
 }
 
 a {
     color: white;
+}
+
+.footer-row {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 0;
+}
+
+.footer {
+    margin-bottom: 6px;
 }

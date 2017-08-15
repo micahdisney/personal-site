@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head th:replace="fragments :: head('Blog index')"/>
+<head th:replace="fragments :: head('Micah Disney')"/>
 
 <body class="indigo">
 <!--<div class="navbar-fixed">-->
 <nav class="z-depth-0 indigo darken-2">
     <div class="nav-wrapper">
-        <a href="/" class="brand-logo">Home</a>
+        <a href="/" class="brand-logo"><i class="large material-icons">home</i></a>
         <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="/aboutme">About Me</a></li>
+            <!--<li><a href="/aboutme">About Me</a></li>-->
             <li><a href="/portfolio">Portfolio</a></li>
             <li><a href="/resume">Resume</a></li>
             <!--<li><a href="/contact">Contact</a></li>-->
@@ -27,7 +27,7 @@
 <!--</div>-->
 
 <ul class="side-nav" id="mobile">
-    <li><a href="/aboutme">About Me</a></li>
+    <!--<li><a href="/aboutme">About Me</a></li>-->
     <li><a href="/portfolio">Portfolio</a></li>
     <li><a href="/resume">Resume</a></li>
     <!--<li><a href="/contact">Contact</a></li>-->
@@ -38,9 +38,8 @@
 <div class="container indigo">
 
 
-
     <!--<div class="portfolio-item">-->
-        <!--<h2 class="center-align white-text">Portfolio</h2>-->
+    <!--<h2 class="center-align white-text">Portfolio</h2>-->
     <!--</div>-->
 
 
@@ -70,7 +69,7 @@
     </div>
 
     <div class="row portfolio-item">
-        <h4 class="center-align white-text">Custom Wordpress Site</h4>
+        <h4 class="center-align white-text">Wordpress Site</h4>
         <p class="center-align white-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus doloribus
             ducimus enim error illo, ipsum
             necessitatibus neque, obcaecati perspiciatis, repudiandae sequi sit tenetur ullam. Ad delectus deserunt
@@ -93,7 +92,20 @@
                                                                               th:src="@{/img/weathermap.png}"/></a>
         </div>
     </div>
+
 </div>
+
+<div class="indigo darken-4">
+    <div class="row footer-row center-align white-text indigo darken-4">
+        <div class="footer">Micah Disney</div>
+        <div class="footer">micah.n.disney@gmail.com</div>
+        <div class="footer">254-715-2502</div>
+        <a href="https://github.com/micahdisney"><i class="fa fa-github small" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/micahdisney/"><i class="fa fa-linkedin small" aria-hidden="true"></i></a>
+        <a href="mailto:micah.n.disney@gmail.com"><i class="fa fa-envelope small" aria-hidden="true"></i></a>
+    </div>
+</div>
+
 
 
 <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
