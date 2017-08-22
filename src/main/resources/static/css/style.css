@@ -46,7 +46,7 @@ a {
 
 .resume-container {
     position: relative;
-    padding-bottom: 100%;
+    padding-bottom: 123%;
     height: 0;
     overflow: hidden;
 }
